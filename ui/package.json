@@ -3,7 +3,9 @@
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
-    "start": "ng serve",
+    "start-admin": "ng serve --project=admin --port=4600",
+    "start-client": "ng serve --project=client --port=4700",
+    "start-ui-tests": "ng serve --project=ui-tests --port=4800",
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
