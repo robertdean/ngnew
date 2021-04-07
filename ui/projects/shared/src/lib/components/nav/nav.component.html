@@ -11,12 +11,13 @@
       <ng-content select="h1.title"></ng-content>
     </mat-toolbar>
     <mat-nav-list>
-      <a *ngFor="let r of routes" mat-list-item [routerLink]="r.path">
+      <a *ngFor="let r of routesForSidebar" mat-list-item [routerLink]="r.path" (click)="drawer.toggle">
         <span *ngIf="r.data && r.data.title"> {{ r.data.title }}</span>
       </a>
-      <a mat-list-item href="#">Link 2</a>
-      <a mat-list-item href="#">Link 3</a>
     </mat-nav-list>
+    <div>
+      <pre>{{ routesForSidebar | json }}</pre>
+    </div>
   </mat-sidenav>
   <mat-sidenav-content>
     <mat-toolbar color="primary">
