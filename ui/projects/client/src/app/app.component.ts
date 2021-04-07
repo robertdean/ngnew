@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { routes } from './app-routing.module';
 
 @Component({
   selector: 'client-root',
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'client';
+
+  routesForSidenav = routes
 }
