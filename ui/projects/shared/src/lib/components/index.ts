@@ -1,3 +1,4 @@
+import { Route } from '@angular/router';
 import { SharedComponent } from '../shared.component';
 import { AccessDeniedComponent } from './access-denied/access-denied.component';
 import { NavComponent } from './nav/nav.component';
@@ -15,3 +16,19 @@ export const components = [
   AccessDeniedComponent,
   NavComponent
 ];
+
+export const defaultRoutes: Route[] = [
+  {
+    path: '403',
+    component: AccessDeniedComponent,
+    data: { title: '403 Access Denied' },
+  },
+  {
+    path: '404',
+    component: PageNotFoundComponent,
+    data: { title: '404 Page Not Found' },
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', component: PageNotFoundComponent },
+  ]
+

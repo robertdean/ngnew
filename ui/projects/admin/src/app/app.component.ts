@@ -8,5 +8,6 @@ import { routes } from './app-routing.module';
 })
 export class AppComponent {
   title = 'Admin';
+
   routesForSidenav = routes
 }

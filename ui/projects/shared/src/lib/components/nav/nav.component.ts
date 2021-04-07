@@ -16,13 +16,10 @@ export class NavComponent {
   routesForSidebar:Route[] = [];
   private _routes: Route[] = [];
 
-
   @Input()
   public get routes(): Route[] {
     return this._routes;
   }
-
-
   public set routes(value: Route[]) {
     this.routesForSidebar = value.filter(getRoutesForSidebar);
     this._routes = value;
