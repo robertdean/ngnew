@@ -23,6 +23,8 @@
     "@angular/platform-browser": "~11.2.8",
     "@angular/platform-browser-dynamic": "~11.2.8",
     "@angular/router": "~11.2.8",
+    "@ngx-formly/core": "5.10.15",
+    "@ngx-formly/material": "5.10.15",
     "material-design-icons": "3.0.1",
     "roboto-fontface": "0.10.0",
     "rxjs": "~6.6.0",
