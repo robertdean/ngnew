@@ -44,5 +44,6 @@ export class HomeComponent implements OnInit {
   submit() {
     console.log(this.model);
   }
+
   ngOnInit(): void {}
 }

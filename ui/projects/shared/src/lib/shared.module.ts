@@ -30,9 +30,9 @@ import { AutoCompleteTypeComponent } from './formly-types/autocomplete-type';
     FormlyMatDatepickerModule,
     FormlyModule.forRoot({
       types:[
-        {name: 'repeat', component: FormlyRepeatSectionComponent},
-        {name: 'autocomplete', component: AutoCompleteTypeComponent},
-        {name: 'flex-layout', component: FlexLayoutTypeComponent},
+        { name: 'repeat', component: FormlyRepeatSectionComponent },
+        { name: 'autocomplete', component: AutoCompleteTypeComponent },
+        { name: 'flex-layout', component: FlexLayoutTypeComponent },
       ]
     })
   ],

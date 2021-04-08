@@ -4,8 +4,7 @@ import { MatAutocompleteTrigger } from '@angular/material/autocomplete';
 import { MatInput } from '@angular/material/input';
 import { FieldType } from '@ngx-formly/material';
 import { Observable } from 'rxjs';
-import { startWith } from 'rxjs/internal/operators/startWith';
-import { switchMap } from 'rxjs/operators';
+import { switchMap,startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'formly-autocomplete-type',
@@ -41,6 +40,6 @@ export class AutoCompleteTypeComponent extends FieldType implements OnInit, Afte
 
   ngAfterViewInit(){
     super.ngAfterViewInit();
-    (<any>this.autocomplete)._formField = this.formFieldControl;
+    (<any>this.autocomplete)._formField = this.formField;
   }
 }
