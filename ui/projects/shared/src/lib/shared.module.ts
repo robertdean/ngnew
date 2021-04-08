@@ -41,6 +41,7 @@ import { AutoCompleteTypeComponent } from './formly-types/autocomplete-type';
     ...components,
     ...formlyTypes,
     ReactiveFormsModule,
+    FlexLayoutModule,
     FormlyModule,
     FormlyMaterialModule,
   ]

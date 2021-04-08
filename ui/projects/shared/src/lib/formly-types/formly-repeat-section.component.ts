@@ -11,8 +11,14 @@ import { FieldArrayType } from '@ngx-formly/core';
     </button>
   </div>
 
-  <div class="fields" fxLayout="row" fxFlexLayoutGap="10px" fxLayout.xs="column"  *ngFor="let field of field.fieldGroup; let i = index" >
-    <formly-field [field]="field"></formly-field>
+  <div
+    class="fields"
+    fxLayout="row"
+    fxFlexLayoutGap="10px"
+    fxLayout.xs="column"
+    fxFlexFill
+    *ngFor="let field of field.fieldGroup; let i = index" >
+    <formly-field [field]="field" fxFlex></formly-field>
     <span>
         <button mat-button color="warn" fxFlex (click)="remove(i)">
           <mat-icon>close</mat-icon>
