@@ -83,7 +83,7 @@ export const fields: FormlyFieldConfig[] = [
                     },
                     fieldGroup: [
                         {
-                            type: 'autocomplete-type',
+                            type: 'autocomplete',
                             key: 'investmentName',
 
                             templateOptions: {
