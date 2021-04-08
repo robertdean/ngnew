@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup } from '@angular/forms';
 import * as investments from './model'
+import { fields } from './model';
 
 @Component({
   selector: 'ui-tests-home',
@@ -18,6 +19,7 @@ export class HomeComponent implements OnInit {
   model = investments.model;
   options = investments.options;
   fields = investments.fields;
+
   form = new FormGroup({});
   constructor() { }
 

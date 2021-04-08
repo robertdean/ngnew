@@ -1,3 +1,5 @@
+import {FormlyMatToggleModule} from '@ngx-formly/material/toggle';
+import { FormlyMatDatepickerModule } from '@ngx-formly/material/datepicker';
 import { NgModule } from '@angular/core';
 import { materialModules } from './material.modules';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -8,7 +10,9 @@ import { FormlyModule } from '@ngx-formly/core';
 import { FormlyMaterialModule } from '@ngx-formly/material';
 import { FormlyRepeatSectionComponent } from './formly-types/formly-repeat-section.component';
 import { ReactiveFormsModule } from '@angular/forms';
-
+import { FlexLayoutModule } from '@angular/flex-layout';
+import { FlexLayoutTypeComponent } from './formly-types/flex-layout-type';
+import { AutoCompleteTypeComponent } from './formly-types/autocomplete-type';
 
 @NgModule({
   declarations: [
@@ -20,10 +24,15 @@ import { ReactiveFormsModule } from '@angular/forms';
     RouterModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
+    FlexLayoutModule,
     FormlyMaterialModule,
+    FormlyMatToggleModule,
+    FormlyMatDatepickerModule,
     FormlyModule.forRoot({
       types:[
-        {name: 'repeat', component: FormlyRepeatSectionComponent}
+        {name: 'repeat', component: FormlyRepeatSectionComponent},
+        {name: 'autocomplete', component: AutoCompleteTypeComponent},
+        {name: 'flex-layout', component: FlexLayoutTypeComponent},
       ]
     })
   ],
