@@ -9,7 +9,6 @@ import { switchMap,startWith } from 'rxjs/operators';
 @Component({
   selector: 'formly-autocomplete-type',
   template: `
-  test
   <input
     matInput
     [matAutocomplete]="auto"
