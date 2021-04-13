@@ -15,9 +15,9 @@ import { switchMap,startWith } from 'rxjs/operators';
     [formControl]="formControl"
     [formlyAttributes]="field"
     [errorStateMatcher]="errorStateMatcher">
-    <mat-autocomplete #auto="matAutocomplete">
+    <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayFn.bind(this)">
       <mat-option *ngFor="let value of filter | async" [value]="value">
-        {{value}}
+        {{displayFn(value)}}
       </mat-option>
     </mat-autocomplete>
   `
@@ -40,5 +40,13 @@ export class AutoCompleteTypeComponent extends FieldType implements OnInit, Afte
   ngAfterViewInit(){
     super.ngAfterViewInit();
     (<any>this.autocomplete)._formField = this.formField;
+  }
+
+
+  displayFn(opt:any){
+    if(opt){
+      return opt[this.to.displayProp];
+    }
+    return null;
   }
 }

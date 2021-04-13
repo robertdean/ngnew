@@ -7,49 +7,53 @@ export const model: any = {
 };
 export const options: FormlyFormOptions = {};
 export interface State {
+    id: number;
     flag: string;
     name: string;
     population: string;
 }
 
-const statesWithFlags: State[] = [
+const states: State[] = [
     {
+        id: 1,
         name: 'Arkansas',
         population: '2.978M',
         // https://commons.wikimedia.org/wiki/File:Flag_of_Arkansas.svg
         flag: 'https://upload.wikimedia.org/wikipedia/commons/9/9d/Flag_of_Arkansas.svg'
     },
     {
+        id: 2,
         name: 'California',
         population: '39.14M',
         // https://commons.wikimedia.org/wiki/File:Flag_of_California.svg
         flag: 'https://upload.wikimedia.org/wikipedia/commons/0/01/Flag_of_California.svg'
     },
     {
+        id: 3,
         name: 'Florida',
         population: '20.27M',
         // https://commons.wikimedia.org/wiki/File:Flag_of_Florida.svg
         flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Florida.svg'
     },
     {
+        id: 4,
         name: 'Texas',
         population: '27.47M',
         // https://commons.wikimedia.org/wiki/File:Flag_of_Texas.svg
         flag: 'https://upload.wikimedia.org/wikipedia/commons/f/f7/Flag_of_Texas.svg'
     }
 ];
-const states = ['Alabama', 'Alaska', 'American Samoa', 'Arizona', 'Arkansas', 'California', 'Colorado',
-    'Connecticut', 'Delaware', 'District Of Columbia', 'Federated States Of Micronesia', 'Florida', 'Georgia',
-    'Guam', 'Hawaii', 'Idaho', 'Illinois', 'Indiana', 'Iowa', 'Kansas', 'Kentucky', 'Louisiana', 'Maine',
-    'Marshall Islands', 'Maryland', 'Massachusetts', 'Michigan', 'Minnesota', 'Mississippi', 'Missouri', 'Montana',
-    'Nebraska', 'Nevada', 'New Hampshire', 'New Jersey', 'New Mexico', 'New York', 'North Carolina', 'North Dakota',
-    'Northern Mariana Islands', 'Ohio', 'Oklahoma', 'Oregon', 'Palau', 'Pennsylvania', 'Puerto Rico', 'Rhode Island',
-    'South Carolina', 'South Dakota', 'Tennessee', 'Texas', 'Utah', 'Vermont', 'Virgin Islands', 'Virginia',
-    'Washington', 'West Virginia', 'Wisconsin', 'Wyoming'];
 
 export function filterStates(name: string) {
     return states.filter(state =>
-        state.toLowerCase().indexOf(name.toLowerCase()) === 0);
+        state.name.toLowerCase().indexOf(name.toLowerCase()) === 0);
+}
+export function filterStateObjects(searchTerm: string){
+  let searchFor = '';
+  if(typeof searchTerm === 'string'){
+    searchFor= searchTerm;
+  }
+  return states.filter((state:State)=>state.name.toLowerCase().indexOf(searchFor.toLowerCase())===0);
 }
 export const fields: FormlyFieldConfig[] = [
     {
@@ -89,8 +93,10 @@ export const fields: FormlyFieldConfig[] = [
                             templateOptions: {
                                 required: true,
                                 label: 'State',
+                                displayProp: 'name',
+                                valueProp: 'id',
                                 placeholder: 'Select a State',
-                                filter: (term: string) => of(term ? filterStates(term) : states.slice()),
+                                filter: (term: string) => of(term ? filterStateObjects(term) : states.slice()),
                             },
                         },
                         {
