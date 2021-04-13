@@ -42,6 +42,12 @@ export class AutoCompleteTypeComponent extends FieldType implements OnInit, Afte
     (<any>this.autocomplete)._formField = this.formField;
   }
 
+  valueFn(opt:any){
+    if(opt){
+      return opt[this.to.valueProp];
+    }
+    return null;
+  }
 
   displayFn(opt:any){
     if(opt){
