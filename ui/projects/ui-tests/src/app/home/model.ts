@@ -88,8 +88,7 @@ export const fields: FormlyFieldConfig[] = [
                     fieldGroup: [
                         {
                             type: 'autocomplete',
-                            key: 'investmentName',
-
+                            key: 'stateId',
                             templateOptions: {
                                 required: true,
                                 label: 'State',
